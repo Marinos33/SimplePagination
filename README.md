@@ -1,7 +1,7 @@
 # SimplePagination
 
-[![NuGet](https://img.shields.io/nuget/v/SimplePagination.svg)](https://www.nuget.org/packages/Marinos33.SimplePagination)
-[![License](https://img.shields.io/github/license/yourusername/SimplePagination)](https://github.com/Marinos33/SimplePagination/blob/main/LICENSE)
+[![NuGet](https://img.shields.io/nuget/v/Marinos33.SimplePagination.svg)](https://www.nuget.org/packages/Marinos33.SimplePagination)
+[![License](https://img.shields.io/github/license/Marinos33/SimplePagination)](https://github.com/Marinos33/SimplePagination/blob/main/LICENSE)
 
 A lightweight, efficient .NET pagination library that simplifies handling paginated data collections. 
 SimplePagination provides a memory efficient extension methods for IQueryable and IEnumerable collections with robust handling of edge cases.
