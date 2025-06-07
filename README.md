@@ -1,7 +1,6 @@
 # SimplePagination
 
 [![NuGet](https://img.shields.io/nuget/v/Marinos33.SimplePagination.svg)](https://www.nuget.org/packages/Marinos33.SimplePagination)
-[![License](https://img.shields.io/github/license/Marinos33/SimplePagination)](https://github.com/Marinos33/SimplePagination/blob/main/LICENSE)
 
 A lightweight, efficient .NET pagination library that simplifies handling paginated data collections. 
 SimplePagination provides a memory efficient extension methods for IQueryable and IEnumerable collections with robust handling of edge cases.
@@ -29,8 +28,8 @@ Install-Package Marinos33.SimplePagination
 using SimplePagination; 
 using System.Collections.Generic;
 
-// For IEnumerable 
-collections IEnumerable<Product> products = GetProducts(); 
+// For IEnumerable collections
+IEnumerable<Product> products = GetProducts(); 
 var pagedProducts = products.ToPaginatedList(pageNumber: 1, pageSize: 10);
 
 // For IQueryable (Entity Framework) with async support 
