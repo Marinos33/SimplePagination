@@ -27,10 +27,16 @@ namespace SimplePagination
             int? pageSize,
             CancellationToken cancellationToken = default)
         {
-            if (pageNumber < 0 || pageSize < 0)
+            if (pageNumber < 0)
             {
-                throw new ArgumentOutOfRangeException(
-                    $"Page number and page size must be greater than or equal to 0. Page number: {pageNumber}, Page size: {pageSize}.");
+                throw new ArgumentOutOfRangeException(nameof(pageNumber), pageNumber,
+                    "Page number must be greater than or equal to 0.");
+            }
+
+            if (pageSize < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(pageSize), pageSize,
+                    "Page size must be greater than or equal to 0.");
             }
 
             int effectivePageNumber = pageNumber ?? 1;
@@ -81,10 +87,16 @@ namespace SimplePagination
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            if (pageNumber < 0 || pageSize < 0)
+            if (pageNumber < 0)
             {
-                throw new ArgumentOutOfRangeException(
-                    $"Page number and page size must be greater than or equal to 0. Page number: {pageNumber}, Page size: {pageSize}.");
+                throw new ArgumentOutOfRangeException(nameof(pageNumber), pageNumber,
+                    "Page number must be greater than or equal to 0.");
+            }
+
+            if (pageSize < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(pageSize), pageSize,
+                    "Page size must be greater than or equal to 0.");
             }
 
             int effectivePageNumber = pageNumber ?? 1;

@@ -18,7 +18,7 @@ namespace SimplePagination.UnitTests
             var mockDbSet = GetQueryableMockDbSet(testData);
 
             // Act
-            var result = await mockDbSet.Object.ToPaginatedListAsync(2, 2);
+            var result = await mockDbSet.Object.ToPaginatedListAsync(2, 2, TestContext.Current.CancellationToken);
 
             // Assert
             result.ShouldNotBeNull();
@@ -41,7 +41,7 @@ namespace SimplePagination.UnitTests
             var mockDbSet = GetQueryableMockDbSet(testData);
 
             // Act
-            var result = await mockDbSet.Object.ToPaginatedListAsync(null, null);
+            var result = await mockDbSet.Object.ToPaginatedListAsync(null, null, TestContext.Current.CancellationToken);
 
             // Assert
             result.ShouldNotBeNull();
@@ -60,7 +60,7 @@ namespace SimplePagination.UnitTests
             var mockDbSet = GetQueryableMockDbSet(testData);
 
             // Act
-            var result = await mockDbSet.Object.ToPaginatedListAsync(10, 2);
+            var result = await mockDbSet.Object.ToPaginatedListAsync(10, 2, TestContext.Current.CancellationToken);
 
             // Assert
             result.ShouldNotBeNull();
@@ -81,7 +81,7 @@ namespace SimplePagination.UnitTests
             var mockDbSet = GetQueryableMockDbSet(testData);
 
             // Act
-            var result = await mockDbSet.Object.ToPaginatedListAsync(1, 0);
+            var result = await mockDbSet.Object.ToPaginatedListAsync(1, 0, TestContext.Current.CancellationToken);
 
             // Assert
             result.ShouldNotBeNull();
@@ -316,7 +316,7 @@ namespace SimplePagination.UnitTests
                 => new TestAsyncEnumerable<TElement>(expression);
 
             public object Execute(Expression expression)
-                => _inner.Execute(expression);
+                => _inner.Execute(expression)!;
 
             public TResult Execute<TResult>(Expression expression)
                 => _inner.Execute<TResult>(expression);

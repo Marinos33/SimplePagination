@@ -12,7 +12,7 @@ SimplePagination provides a memory efficient extension methods for IQueryable an
 - Optimized performance for different collection types (arrays, lists, etc.)
 - Robust parameter validation and normalization
 - Clean, intuitive API with nullable parameters
-- Target framework: .NET Standard 2.0 (compatible with .NET Core, .NET 5+, and .NET Framework)
+- Multi-targeted for .NET 8.0 and .NET 10.0, each build using the most up-to-date compatible EF Core version for best performance
 
 ## Installation
 
@@ -65,7 +65,9 @@ public class PaginatedList<T>
 ## Dependencies
 
 - Microsoft.EntityFrameworkCore (for IQueryable extensions)
-- .NET Standard 2.0+
+- .NET 8.0 or .NET 10.0
+
+The package is multi-targeted: a project targeting `net8.0` pulls in EF Core 9.x, while a project targeting `net10.0` pulls in EF Core 10.x automatically, so each consumer gets the newest compatible EF Core build for its runtime.
 
 ## License
 
